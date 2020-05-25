@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TÍNH TUỔI</title>
+<script>
+function tinhtuoi()
+{
+	var d= new Date(); 
+	namht = d.getFullYear(); 
+	var namsinh = document.getElementById("txtNamsinh").value;
+	var tuoi= namht - parseInt(namsinh); // parseInt: chuyen nam sinh thanh so
+	var ten = document.getElementById("txtTen");
+	var kq = document.getElementById("kqTuoi");
+	kq.innerHTML = "Chào bạn " +  ten.value + "!<br>Tuổi của bạn là " + tuoi;
+}
+</script>
+</head>
+<body>
+<h3>CHƯƠNG TRÌNH TÍNH TUỔI</h3>
+<table width="400" border="1"> <!-- khai báo bảng có chiều rộng 400px, đường viền = 1px -->
+  <tr>
+    <td>Nhập vào tên bạn:</td>
+    <td><input id="txtTen" type="text"  /></td>
+  </tr>
+  <tr>
+    <td>Nhập vào năm sinh:</td>
+    <td><input id="txtNamsinh" type="text" value="1980" /></td>
+  </tr>
+  <tr>
+	<td> </td>
+	<td> <button onclick="tinhtuoi()"> Tính tuổi </button></td>
+  </tr>
+</table>
+<br> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<p id="kqTuoi"></p>
+</body>
+</html>

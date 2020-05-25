@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style>
+		p { 
+			background-color:darkblue;
+			font-weight:bold ;
+			font-size: 14pt;
+			color:yellow;
+			padding: 20px;
+		}
+		h1{color:red;}
+	</style>
+	<script >
+		 function changeStyle(){
+			document.styleSheets[0].disabled=false; // now visible
+			document.styleSheets[1].disabled=false;
+		 }
+		function defaultStyle(){
+			document.styleSheets[0].disabled=true;
+			document.styleSheets[1].disabled=true;
+		}
+	</script>
+</head>
+<body>
+	<h1>Thay đổi Style</h1>
+	<input type="radio" name="style" onclick="defaultStyle()">Mặc định<br />
+	<input type="radio" name="style" checked onclick="changeStyle()">Áp dụng style<br />
+<p>
+	Click vào tùy chọn &quot;Mặc định&quot; chuyển về định dạng mặc định.<br><br>
+	Click vào tùy chọn &quot;Áp dụng style&quot; để áp dụng style định dạng.
+</p>
+</body>
+</html>

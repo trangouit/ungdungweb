@@ -1,0 +1,12 @@
+body{
+    text-align:center;
+}
+
+.box{
+    text-align:left;
+    width:auto;
+    height:auto;
+}
+
+h2{color:red;}
+button{display:inline;}

@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+ h1 {
+	 	padding-top:20px;
+    	color: yellow;
+    	text-shadow: 2px 2px #FF0000;
+}
+ nav a{
+		font-size:medium;
+	 	font-weight:bold;
+	 	text-decoration:none; 
+ }
+ nav a:hover{
+	 	color:#FF0000;
+	 }
+
+#main{
+    margin-left: 50px;
+    margin-right: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#banner{
+	width:100%;
+    height: 100px;
+    background-image:url(../Images/backgrd.png); background-repeat:repeat-x repeat-y;
+    border: 1px solid #CDCDCD;
+}
+#menu{
+	width:100%;
+     height: 50px;
+     border: 1px solid #CDCDCD;
+     background-color: #0000FF;
+     margin-bottom:5px;
+	 text-align:center;
+	padding-top: 0px;
+  /*   clear: both;*/
+}
+#content{
+	width: 100%;
+	background-color: yellow;
+	min-height: 600px;
+}
+#left{
+     width: 15%;
+     border: 1px solid #CDCDCD;
+	float: left;
+	min-height: 600px;
+	background-color: aliceblue;
+}
+#right{
+     width: 15%;
+     border: 1px solid #CDCDCD;
+     float:right;
+min-height: 600px;
+	background-color: aliceblue;
+}
+
+#detail{
+	width: 68%;
+	border: 1px solid #CDCDCD;
+	margin-left: 5px;
+	margin-right: 5px;
+	float: left;
+	min-height: 600px;
+}
+#footer{
+     height: 50px;
+     clear: both;
+     border: 1px solid #CDCDCD;
+     background-color: #0000FF;
+	 width:100%;
+}
+#radv {
+    border-radius: 25px; 
+	border: 1px solid #73AD21;
+	background:#FFC;
+    padding: 5px; 
+    height: 120px;    
+	margin-left:2px;
+	margin-right: 2px;
+	margin-top:10px;
+}
+#sub_content div{
+	width: 45%;
+    height: 180px;
+	overflow: scroll;
+	text-align:justify;
+	text-indent: 10px;
+	line-height: 1.5;
+    font-size:12px;
+	margin:5px;
+	padding:10px;
+	float: left;
+}
+#c{clear: left;}
+
+ #menu> ul> li{
+	list-style: none;
+	display: inline-block;
+	color: red;
+	margin-left: 5px;
+	background-color:#EFEFEF;
+	 width: 100px;
+	 height: 30px;
+	 text-align: center;
+	 vertical-align: middle;
+	 position:relative;
+}
+#submenu li {
+	display: none;
+}
+#menu ul li:nth-child(2):hover #submenu li {
+	display:block;
+	width: 200px;
+	margin-left: -30px;
+	background-color:#EFEFEF;
+}
+#menu >ul >li> ul> li{
+	width:180px;
+	text-align:left;
+	margin-top:3px;
+
+}

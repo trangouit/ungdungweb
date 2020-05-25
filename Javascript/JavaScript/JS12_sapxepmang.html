@@ -1,0 +1,74 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sắp xếp mảng</title>
+<script>
+function random_array()
+{
+	arr =[];
+	n = parseInt(document.getElementById("sopt").value);
+	var  i;
+	var s="";
+	for (i=0; i<n;i++)
+	{
+		arr[i] = Math.round( Math.random()*100%20+1,0);
+		s+=arr[i]+"&nbsp;&nbsp;&nbsp;";
+	}
+	document.getElementById("arr_org").innerHTML="Mảng ban đầu: " + s;
+}
+function sort_array_inc1()
+{
+	var  i, j;
+	for (i=0; i<n-1;i++)
+	{
+		for (j=i+1;j<n ;j++ )
+		{
+			if(arr[i]>arr[j])
+			{
+				var tmp = arr[i];
+				arr[i]=arr[j];
+				arr[j] =tmp;
+			}
+		}
+		//s+=arr[i]+"&nbsp;&nbsp;&nbsp;";
+	}
+	document.getElementById("arr_inc").innerHTML="Mảng tăng dần: " + arr;
+}
+function sort_array_inc()
+{
+	arr.sort(function(a, b) {
+  		return a - b;
+		});
+	var s="", i;
+	for (i=0; i<n;i++)
+	{
+		s+=arr[i]+"&nbsp;&nbsp;&nbsp;";
+	}
+	document.getElementById("arr_inc").innerHTML="Mảng tăng dần: " + s;
+}
+function sort_array_dec()
+{
+	arr.sort(function(a, b) {
+  		return b - a;
+		});
+	var s="", i;
+	for (i=0; i<n;i++)
+	{
+		s+=arr[i]+"&nbsp;&nbsp;&nbsp;";
+	}
+	document.getElementById("arr_dec").innerHTML="Mảng giảm dần: " + s;
+}
+</script>
+</head>
+
+<body> 
+Nhập số phần tử: <input type="number" id="sopt" value="10"><br>
+<button onClick="random_array()" id="btRand">Tạo mảng</button>
+<button onClick="sort_array_inc()" id="btSort">Sắp xếp mảng tăng</button>
+<button onClick="sort_array_dec()" id="btSort_dec">Sắp xếp mảng giảm</button>
+<p id="arr1"></p>
+<p id="arr_inc"</p>
+<p id="arr_dec"</p>
+</body>
+</html>

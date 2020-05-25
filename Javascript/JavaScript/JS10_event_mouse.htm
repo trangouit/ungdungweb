@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Click On Me</title>
+<style>
+	body{ font-size: 1.2em;}
+	p#kq{
+		color: red;
+	}
+</style>
+	<script>
+		function submitMsg(){
+			document.getElementById('kq').innerHTML='Form đã được submit!';
+			return false;
+		}
+	</script>
+</head>
+
+<body>
+	<form onSubmit="return submitMsg()">
+		<h3>XỬ LÝ SỰ KIỆN</h3>
+		<input type="button" value="Click vào đây" onClick="document.getElementById('kq').innerHTML='Bạn đã click vào button '+ this.value">
+		<input type="submit" value="Gửi">
+		<br>
+		<input type="text" name="change"
+	 		onChange="document.getElementById('kq').innerHTML='Nội dung chuỗi nhập đã thay đổi thành: '+ this.value">
+		<br>
+	</form>
+	<p>
+	<a href="test.html" onMouseOver="document.getElementById('kq').innerHTML='Con trỏ chuột đang nằm trên liên kết'"  onMouseOut="document.getElementById('kq').innerHTML=''">
+		http://cunghoclaptrinh.com </a></p>
+	<p id="kq"></p>
+	
+</body>
+	
+</html>
+
+

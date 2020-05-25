@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Chương 4: ví dụ về form</title>
+</head>
+
+<body>
+<form>
+  <table width="582" border="1">
+    <tr>
+      <td width="120">Họ tên:</td>
+      <td width="446"><input type="text" name="hoten" size="20" maxlength="30" placeholder="Nhập họ tên ở đây!" /></td>
+    </tr>
+    <tr>
+      <td>Giới tính</td>
+      <td><input type="radio" name="gioitinh" checked="checked"/>
+Nam
+  <input type="radio" name="gioitinh"/>
+Nữ </td>
+    </tr>
+    <tr>
+      <td>Điều bạn quan tâm</td>
+      <td><input type="checkbox" name="quantam" checked="checked"/>
+Kinh tế
+  <input type="checkbox" name="quantam"  checked="checked"/>
+Xã hội
+<input type="checkbox" name="quantam"/>
+Giải trí</td>
+    </tr>
+    <tr>
+      <td>Địa chỉ:</td>
+      <td><textarea name="diachi" cols="60" rows="5">
+	  </textarea></td>
+    </tr>
+    <tr>
+      <td>Học vấn:</td>
+      <td><select name="hocvan" >
+        <option value="daihoc">Đại học</option>
+        <option value="caodang">Cao đẳng</option>
+        <option value="trungcap">Trung cấp</option>
+        <option value="thpt">THPT</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input name="submit" type="submit" value="Gửi thông tin"  />
+        <input name="reset" type="reset" value="Nhập lại"  /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta  charset='utf-8'>
+<title>Bài tập 2</title>
+
+</head>
+<body>
+<script>
+function GetClock()
+{
+	d = new Date();
+	month = d.getMonth();
+	ndate  = d.getDate();
+	year = d.getFullYear();
+	hour  = d.getHours();
+	minute   = d.getMinutes();
+	second   = d.getSeconds();
+	if(hour <=12) ap= " AM";
+	else ap =" PM";
+	hour = (hour %12==0?12:hour%12);
+	minute = minute <9 ?"0"+minute: minute;
+	second = second <9 ?"0"+second : second;
+	document.getElementById('clockbox').innerHTML = 
+		"<h1>Hôm nay ngày "  + ndate + "/" + (month+1) + "/"+ year + "<br>"
+		+ hour+":" + minute+":" + second+ap+"</h1";
+}
+timer = setInterval("GetClock()", 1000);
+//window.onload=GetClock;
+/*function start()
+{
+	timer = setInterval("GetClock()", 1000);
+}
+function stop()
+{
+	clearInterval (timer);
+}
+*/
+</script> 
+<p id="clockbox"></p>
+
+</body>
+
+</html>

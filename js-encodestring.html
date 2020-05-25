@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script>
+	function LetterChanges(text) {
+     var s = text.split('');
+    for (var i = 0; i < s.length; i++) {
+        // Caesar cipher
+        switch(s[i]) {
+          case ' ':
+            break;
+          case 'z':
+            s[i] = 'a';
+            break;
+          case 'Z':     
+            s[i] = 'A';
+            break;
+		 case '9':     
+            s[i] = '0';
+            break;
+          default:
+            s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+        }
+
+        
+    }
+    return s.join('');
+}
+console.log(LetterChanges("pizza"));
+console.log(LetterChanges("C15S9"));
+console.log(LetterChanges("php"));
+	</script>
+</head>
+
+<body onLoad="LetterChanges('XYZ9')">
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Đăng ký</title>
+<script type="text/javascript">
+// JavaScript Document
+    function validateForm() 
+	{
+        //Họ phải được điền
+        var ho = document.forms["myForm"]["ho"].value;
+        if (ho == "") {
+            alert("Họ không được để trống");
+            return false;
+        }
+        //Tên phải được điền
+        var ten = document.forms["myForm"]["ten"].value;
+        if (ten == "") {
+            alert("Tên không được để trống");
+            return false;
+        }
+  
+          //Nhập số điện thoại
+          var dienThoai = document.forms["myForm"]["dienThoai"].value;
+          if (dienThoai == "") {
+              alert("Điện thoại không được để trống");
+              return false;
+          }
+          //Nhập số lượng muốn mua
+          var soLuong = document.forms["myForm"]["soLuong"].value;
+          if ((soLuong == "") || (soLuong <= 0)) {
+              alert("Số lượng không được để trống và phải lớn hơn 0");
+              return false;
+          }      
+          //Chọn ngày nhận hàng
+   var nm = document.forms["myForm"]["ngaymua"].value;
+   if (nm == "") {
+    alert("Ngày không được để trống");
+    return false;
+    }
+    //Chọn kiểu thanh toán
+          var ck = document.getElementById("ck");
+          var tt = document.getElementById("tt");
+    if ((ck.checked == false) && (tt.checked == false)) {
+     alert("Bạn phải chọn một kiểu thanh toán");
+     return false;
+     }
+}
+</script>
+</head>
+
+<body>
+
+
+<br />
+<form action="#" method="post" name="myForm" onsubmit="return validateForm()">
+<table border="1"  id="formdangky" style="border-collapse:collapse; background-color:#FCF; width:550px;">
+<tr>
+    <td colspan="2" style="text-align:center; color:#00F" ><b>ĐĂNG KÝ MUA HÀNG</b></td>
+    
+ </tr>
+
+<tr>
+    <td class="tenhang" width="120">Họ:</td>
+    <td width="320"><input name="ho" type="text" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Tên:</td>
+    <td><input name="ten" type="text" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Email:</td>
+    <td><input name="email" type="email" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Số Điện Thoại:</td>
+    <td><input maxlength="11/" name="dienThoai" type="text" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Số Lượng Mua:</td>
+    <td><input name="soLuong" min="1" type="number" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Ngày Nhận Hàng:</td>
+    <td><input id="datepicker" name="ngaymua" type="date" /></td>
+  </tr>
+<tr>
+    <td class="tenhang">Thanh Toán:</td>
+    <td><input id="ck" name="thanhToan" type="radio" value="chuyenKhoan" /> Chuyển Khoản
+        <input id="tt" name="thanhToan" type="radio" value="trucTiep" /> Trực Tiếp Khi Giao Hàng
+    </td>
+  </tr>
+<tr>
+    <td><input name="Submit" type="submit" value="Đăng Ký Mua" /></td>
+    <td><input name="Reset" type="reset" value="Xóa" /></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML">
+<html>
+ <head>
+ <meta charset="utf-8" />
+  <title> New Document </title>
+ </head>
+
+ <body>
+<table>
+<caption><h3>String Statistic</h3></caption>
+<tr>
+<td>String:</td>
+<td><input type="text" id="a" size=30 value="Hello, how are you? 1123425"></td>
+</tr>
+
+<tr>
+<td></td>
+<td><button onclick="Statistic()">Statistic </button>
+</td>
+</tr>
+  <tr>
+<td></td>
+<td><p id="ketqua"></p>
+</td>
+</tr>
+</table>
+	<script>
+	function Statistic()
+	{
+		var s1 = document.getElementById("a").value;
+		
+		var arr = s1.split(" ");
+		var i;
+		var arrKq = [];
+		var a = arr[0];
+		
+		var kq= "Characters: " + s1.length +"<br>" +
+				"Words: " + arr.length + "<br>";
+		for (i=0; i< s1.length ; i++)
+		{
+			if((s1.charCodeAt(i)>= 48 && s1.charCodeAt(i) <=57) ||		
+				(s1.charCodeAt(i)>= 65 && s1.charCodeAt(i) <= 90))
+			{
+				if (isNaN(arrKq[s1.charCodeAt(i)]))//ko la so
+					arrKq[ s1.charCodeAt(i)] = 1;
+				else
+					arrKq[ s1.charCodeAt(i)] ++;
+			}
+			else if	(s1.charCodeAt(i)>= 97 && s1.charCodeAt(i) <=122)
+			{
+				if (isNaN(arrKq[ s1.charCodeAt(i)-32]))//ko la so
+					arrKq[ s1.charCodeAt(i)-32] = 1;
+				else
+					arrKq[ s1.charCodeAt(i)-32] ++;
+			}
+		}
+		for (i=0; i<arrKq.length; i++)
+		{
+		if (!isNaN(arrKq[i]))
+			kq += "Character '" + String.fromCharCode (i)+ "': " + arrKq[i]+ "<br>";
+		}
+		document.getElementById("ketqua").innerHTML = kq;
+	}
+	
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Phương trình bậc hai</title>
+<script>
+function ptb2()
+{
+	var a = document.f_nhap.a.value;
+	var b = document.f_nhap.b.value;
+	var c = document.f_nhap.c.value;
+	if (a==0)
+	{
+		if(b==0)
+			if(c==0)	
+				document.getElementById("kq").innerHTML = "Phuong trinh co vo so nghiem";
+			else
+				document.getElementById("kq").innerHTML = "Phuong trinh co vo nghiem";
+		else//b!=0
+			document.getElementById("kq").innerHTML = 
+				"Phương trình có nghiệm là " + (parseFloat(-c)/b).toFixed(2);
+	}
+	else //a!=0
+	{
+		var delta = b*b-4*a*c;
+		if(delta==0)
+			document.getElementById("kq").innerHTML = "Phương trình có nghiệm kép là " + 
+				parseFloat(-b)/(2*a).toFixed(2);
+		else if (delta < 0)
+			document.getElementById("kq").innerHTML = "Phương trình vô nghiệm " ;
+		else //delta>0
+		{
+			var x1 =(-b + Math.sqrt(delta))/(2*a);
+			var x2 = (-b - Math.sqrt(delta))/(2*a);
+			document.getElementById("kq").innerHTML = "Phương trình có 2 nghiệm là:" + 
+			"<br>x1 = "+ x1.toFixed(2) +
+			"<br>x2 = " + x2.toFixed(2);
+		}
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<form name="f_nhap">
+ <table width="400px" border="2" style="border-collapse: collapse; background-color:#FFC " cellpadding="5">
+ <caption>
+ <b>CHƯƠNG TRÌNH GIẢI PHƯƠNG TRÌNH BẬC 2 
+	<br>ax<sup>2</sup> + bx + c = 0</b>
+ </caption>
+   <tr>
+     <td width="100px">a =</td>
+     <td width="280px"><input type="text" name="a" size="10"></td>
+   </tr>
+   <tr>
+     <td>b =</td>
+     <td><input type="text" name="b" size="10"></td>
+   </tr>
+   <tr>
+     <td>c =</td>
+     <td><input type="text" name="c" size="10"></td>
+   </tr>
+   <tr>
+     <td>&nbsp;</td>
+     <td>
+		<input type="button" value="Giải" onClick="ptb2()">
+		<input type="reset" value="Xóa" >
+     </td>
+   </tr>
+ </table>
+</form>
+<h4 id="kq"></h4>
+</body>
+</html>

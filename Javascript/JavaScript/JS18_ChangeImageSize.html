@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>Resize Image</title>
+<style>
+.largesize {height: 384px; width: 512px}
+.mediumsize {height: 192px; width: 256px}
+.smallsize {height: 77px; width: 102px}
+</style>
+<script>
+function setImgSize(evt) {
+	document.getElementById("image").className = evt + "size";
+}
+</script>
+</head>
+<body>
+<h1>Image Resizing</h1>
+<hr />
+<p id="scale">Scale: 
+<input id="smallScale" type="radio" name="scaler" value="small"  onclick="setImgSize(this.value)">10%
+<input id="mediumScale" type="radio" name="scaler" value="medium" onclick="setImgSize(this.value)">25%
+<input id="largeScale" type="radio" name="scaler" value="large" checked onclick="setImgSize(this.value)">50%
+</p>
+<img id="image" class="largesize" src="pointlobos.jpg" />
+</body>
+</html>

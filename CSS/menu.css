@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+/*==Reset CSS==*/
+* {
+  margin: 0;
+  padding: 0;
+}
+ 
+/*==Style cơ bản cho website==*/
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+#menu ul {
+  background: #1F568B;
+  list-style-type: none;
+  text-align: center;
+}
+/*các mục nằm hàng ngang*/
+#menu li {
+  color: #f1f1f1;
+  display: inline-block;/*cho các mục nằm hàng ngang*/
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -5px;
+}
+/* style cho các liên kết*/
+#menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+/*ẩn Dropdown Menu==*/
+#menu li .submenu  {
+  display: none;
+	position: absolute;
+}
+/*muốn tùy biến lại .sub-menu khi hiển thị (sẽ nằm bên ngoài  #menu ul để không bị đẩy lên. Để tùy biến vị trí một phần tử mà không ảnh hưởng đến các phần tử -->sử dụng  position. Nhưng .sub-menu phải nằm gần menu cha -->thiết lập #menu li thành kiểu relative vì #menu li là các item cấp lớn nhấtlà menu cha.*/
+#menu li {
+ position: relative;
+}
+/*cho .sub-menu thành kiểu absolute để nó luôn luôn nằm trong phạm vi menu cha (#menu li) --> viết lại đoạn .sub-menu position: absolute;*/
+/*.sub-menu hiển thị ra khi ta rê chuột vào menu cha display: block */
+
+#menu li:hover .submenu {
+ display: block;
+}
+

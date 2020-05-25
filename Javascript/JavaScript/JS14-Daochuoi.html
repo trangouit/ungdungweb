@@ -1,0 +1,55 @@
+<!DOCTYPE HTML">
+<html>
+ <head>
+ <meta charset="utf-8" />
+  <title> New Document </title>
+ </head>
+
+ <body>
+<table>
+<caption><h3>XỬ LÝ CHUỖI</h3></caption>
+<tr>
+<td>Chuỗi ban đầu:</td>
+<td><input type="text" id="a" size=30 value="Bài tập xử lý chuỗi"></td>
+</tr>
+
+<tr>
+<td></td>
+<td><button onclick="Daochuoi()">Đảo chuỗi</button>
+<button onclick="Chuanhoachuoi()">Chuẩn hóa chuỗi</button></td>
+</tr>
+  
+</table>
+	<script>
+	function Daochuoi()
+	{
+		
+		var s1 = document.getElementById("a").value;
+		var arr = s1.split(" ");
+		var i;
+		var kq ="";
+		for (i = arr.length-1; i >= 0; i--)
+			kq = kq + arr[i] + " ";
+		document.getElementById("a").value = kq;
+	}
+	function Chuanhoachuoi()
+	{
+		var s1 = document.getElementById("a").value;
+		var arr = s1.split(" ");
+		var i;
+		var kq ="", s;
+		for (i = 0; i < arr.length; i++)
+		{
+			s = arr[i];
+			if( s!="") 
+			{
+				s = s.substr(0,1).toUpperCase()+ s.substr(1).toLowerCase();
+				kq += s +  " ";
+			}
+		}
+		document.getElementById("a").value = kq.trim();
+	}
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Recipe 15.3</title>
+
+<script type="text/javascript" src="JS/js-search-replace.js"></script>
+<script type="text/javascript">
+function process2(form, container) {
+    var search = form.searchString.value;
+    var replace = form.replaceString.value;
+	var caseSensitive = form.caseSensitive.checked;
+	srBatch(container, search, replace, caseSensitive);
+}
+</script>
+<style>
+	#rights{border: 2px solid; margin: 10px;
+	padding: 5px;}
+	</style>
+</head>
+<body>
+<h1>Tìm kiếm và thay thế</h1>
+<hr /> 
+
+<form>
+<p>Nhập chuỗi cần tìm:
+<input type="text" name="searchString" size="20" placeholder="Nhập chuỗi cần tìm" > &nbsp;
+<input type="checkbox" name="caseSensitive">Có phân biệt chữ hoa &nbsp;
+
+<p>Nhập chuỗi thay thế:
+<input type="text" name="replaceString" size="20" placeholder="Nhập chuỗi thay thế"></p>
+<p><input type="button" value="Tìm và thay thế" onClick="process2(this.form, document.getElementById('rights'))"></p>
+<p><input type="button" value="Khôi phục" onClick="undoReplace()"></p>
+</form>
+
+<div id="rights">
+<a name="Chapter1">
+<h2>CHƯƠNG I. HTML</h2>
+
+</a>
+<p>
+	HTML (Hypertext Markup Language) là một ngôn ngữ đánh dấu siêu văn bản, được dùng để tạo ra hầu hết các trang web.
+</p>
+
+<a name="chapter2">
+<h2>CHƯƠNG II. CSS</h2>
+</a>
+<p>
+
+	CSS là một ngôn ngữ định kiểu, một bộ quy tắc để mô tả cách hiển thị của các đối tượng trên trang web
+</p>
+
+<a name="chapter3">
+<h2>CHƯƠNG III. JAVASCRIPT</h2>
+</a>
+
+<p>
+Javascript là một ngôn ngữ lập trình xử lý trang web động phía client.
+</p>
+
+<a name="chapter4">
+<h2>CHƯƠNG IV. JQUERY</h2>
+</a>
+<p>
+jQuery là một thư viện các hàm JavaScript giúp nhà phát triển giảm thiểu số lượng mã lệnh khi viết code với JavaScript.
+</p>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+	$(document).ready(function(){
+		$('p').css({"border":'0'});
+		$('p').each(function() {
+			var text_words = $(this).text().split(' ');
+			$(this).empty().html(function() {
+				for (i = 0; i < text_words.length; i++) {
+						$(this).append('<span>' + text_words[i] + '</span> &nbsp;');
+				}
+		});
+});
+	});
+	</script>
+<style>
+	p span{
+    text-decoration: underline;
+  }
+	p{border:2px solid;}
+	</style>
+</head>
+<body>
+	<div>
+	<p>Đoạn thứ nhất</p>
+	<p>Đoạn thứ hai</p>
+	<p>Đoạn thứ ba</p>
+	</div>
+	<div>
+	<p>Đoạn thứ nhất</p>
+	<p>Đoạn thứ hai</p>
+	<p>Đoạn thứ ba</p>
+	</div>
+</body>
+</html>

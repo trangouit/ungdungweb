@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> CÁC PHÉP TOÁN </title>
+  <meta charset=utf-8>
+  <style>
+   table,  td{
+	padding:25px;
+	border-style:solid;
+	border-width:1px;
+	border-collapse:collapse;
+	background-color:#FFFF99;
+   }
+   th{
+   color: blue;
+   }
+  </style>
+  
+ </head>
+ <body>
+	<script>
+	var row, col, i = 2, j;
+	var html ="<table>";
+	for (row =1 ; row <=2; row ++)
+	{
+		html +="<tr>";
+		for( col = 1 ; col <= 4; col ++)
+		{
+			j = 1;
+			html +="<td>";
+			for( j = 1; j<= 9; j++)
+			{
+				html = html + (i + " * " + j) + " = " + i*j + "<br>";
+			}
+			i++;
+			html +="</td>";
+		}
+		html+="</tr>"
+	}
+	html +="</table";
+	document.write (html);
+  </script>
+ </body>
+ </html>

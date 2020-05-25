@@ -1,0 +1,48 @@
+<!DOCTYPE HTML">
+<html>
+ <head>
+ <meta charset="utf-8" />
+  <title> New Document </title>
+ </head>
+
+ <body>
+<table>
+<caption><h3>THAY THẾ CHUỖI</h3></caption>
+<tr>
+<td>Chuỗi ban đầu:</td>
+<td><input type="text" id="a" size=30 value="ABCD EFGH AB EF GH XYZ"></td>
+</tr>
+<tr>
+<td>Chuỗi bị thay thế:</td>
+<td><input type="text" id="b"></td>
+</tr>
+<tr>
+<td>Chuỗi thay thế:</td>
+<td><input type="text" id="c"></td>
+</tr>
+<tr>
+<td></td>
+<td><button onclick="myFunction()">Thực hiện</button></td>
+</tr>
+  
+</table>
+	<script>
+	function myFunction()
+	{
+	var s1 = document.getElementById("a").value;
+	var s2 = document.getElementById("b").value;
+	var s3 = document.getElementById("c").value;
+	if(s2=="") return;
+	while(true)
+	{
+		var i = s1.indexOf(s2);
+		if(i<0) break;
+		s1 = s1.replace(s2,s3);
+		i = s1.indexOf(s2);
+	}
+	document.getElementById("a").value = s1;
+	}
+	</script>
+
+ </body>
+</html>

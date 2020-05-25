@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="utf-8" />
+<title>Untitled Document</title>
+<link rel="stylesheet"  href  ="tictac.css" type="text/css">
+<script src="lib/jquery-3.1.0.min.js"></script>
+<script >
+//Global Variables
+var content;//mang luu x-o
+var winning;//mang kiem tra thang
+var turn = 0;
+var theCanvas;//lưu tên canvas đê3 truy xuất
+var c;
+var cxt;
+var ncheck = 0;//so o da ve
+var w;
+var y;
+//Instanciate Arrays
+window.onload=function()
+{
+    content = new Array();
+    winning = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    for(var l = 0; l <= 8; l++)
+	{
+    	content[l]='';
+    }
+}
+//ham xu ly su kien click len canvas
+function canvasClicked(canvasNumber){
+    theCanvas = "canvas"+canvasNumber;//dinh danh canvas
+    c = document.getElementById(theCanvas);
+    cxt = c.getContext("2d");
+    if(content[canvasNumber-1] =='')//o chua ve
+	{
+        if(turn%2==0){
+            cxt.beginPath();
+            cxt.moveTo(10,10);
+            cxt.lineTo(40,40);
+            cxt.moveTo(40,10);
+            cxt.lineTo(10,40);
+			cxt.strokeStyle="blue";
+			cxt.lineWidth=3;
+            cxt.stroke();
+            cxt.closePath();
+            content[canvasNumber-1] = 'X';
+        }
+        else{
+            cxt.beginPath();
+			cxt.fillStyle="red";
+            cxt.arc(25,25,20,0,Math.PI*2,true);
+            cxt.fill();
+            cxt.closePath();
+            content[canvasNumber-1] = 'O';
+        }
+        turn++;
+        ncheck++;
+        checkForWinners(content[canvasNumber-1]);
+        if(ncheck==9){
+            document.getElementById("kq").innerHTML="Bàn cờ đầy!";
+
+        }
+
+    }
+    else{
+        alert("Ô này đã check rồi!");
+    }
+
+}
+function checkForWinners(symbol)
+{
+    for(var i = 0; i < winning.length; i++)
+	{
+    	if(content[winning[i][0]]==symbol
+			&&content[winning[i][1]]== symbol
+			&&content[winning[i][2]]==symbol)
+			{
+				document.getElementById("kq").innerHTML= symbol+" thắng!";
+        	//	playAgain();
+    		}
+    }
+}
+
+function playAgain(){
+  //  y=confirm("Chơi lại?");
+    //if(y==true)
+	{
+        location.reload(true);
+    }
+}
+
+</script>
+</head>
+
+<body>
+ <div id ="box">
+            <h1>CHÚC BẠN VUI VẺ!</h1>
+            <h2 id="kq"></h2>
+            <canvas id = "canvas1"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(1)"></canvas>
+            <canvas id = "canvas2"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(2)"></canvas>
+            <canvas id = "canvas3"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(3)"></canvas><br/>
+            <canvas id = "canvas4"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(4)"></canvas>
+            <canvas id = "canvas5"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(5)"></canvas>
+            <canvas id = "canvas6"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(6)"></canvas><br/>
+            <canvas id = "canvas7"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(7)"></canvas>
+            <canvas id = "canvas8"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(8)"></canvas>
+            <canvas id = "canvas9"  width="50" height="50" style="border:1px solid black" onclick="canvasClicked(9)"></canvas>
+        
+        </div>
+<br><br>    <button onClick="playAgain()">Chơi lại</button>
+</body>
+</html>

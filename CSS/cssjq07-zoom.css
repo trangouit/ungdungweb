@@ -1,0 +1,55 @@
+
+body {
+	font: 12px Arial, sans-serif;
+}
+
+/* Base padding. */
+#container {
+	padding: 20px;
+}
+
+.panels,.panels a, .panels li {
+	height: 200px;
+	overflow: hidden;
+}
+
+.panels {
+	background: #ddd;
+	margin: 0 0 20px;
+	position: relative;
+	width: 900px;
+}
+
+.panels li {
+	float: left;
+	font-size: 100px;
+	line-height: 200px;
+	list-style: none;
+	text-align: center;
+	width: 180px;
+}
+
+.panels li.last, .panels li:last-child {
+	border: 0;
+	float: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.panels a {
+	background: url(../Images/radial.png) no-repeat 0 200px;
+	color: #666;
+	display: block;
+	text-decoration: none;
+	width: 100%;
+}
+
+.panels a:hover {
+	background-color: #bbb;
+	background-position: center top;
+	color: #000;
+	font-weight: bold;
+	text-shadow: #fff 0 5px 5px;
+}
+

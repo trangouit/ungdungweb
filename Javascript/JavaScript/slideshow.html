@@ -1,0 +1,149 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>DHTML Slide Show</title>
+<style type="text/css">
+#slides {
+font-family: Verdana, Arial, sans-serif;
+position: absolute;
+top: 40px;
+width: 90%
+}
+.slide {
+position: absolute;
+top: 0px;
+left: 0px;
+display: none;
+width: 80%;
+height: 500px;
+overflow: hidden;
+background-color: #ccffcc;
+font-size: 18px;
+padding: 20px;
+border: 5px solid #ff9900;
+margin: 10%;
+margin-top: 70px
+}
+h1 {
+text-align: right;
+padding-right: 10%
+}
+h2 {
+font-size: 36px;
+text-align: center
+
+}
+li {
+list-style-image: url(end.gif);
+list-style-position: outside
+}
+hr {
+width: 60%;
+height: 5px;
+background-color: #ff9900
+}
+#titleBar {
+width: 100%;
+height: 10px
+}
+body {background-color: #339966}
+#controller {
+position: absolute;
+top: 30px;
+left: 10%
+}
+</style>
+<script src="../js/eventsManager.js"></script>
+<script src="../js/DHTML3API.js"></script>
+<script type="text/javascript">
+// Array of all slides
+var allSlides;
+// Slide counter
+var currSlide = -1;
+// Set global with array of slide elements
+function getAllSlides( ) {
+var allChildren = document.getElementById("slides").childNodes;
+var slideElems = new Array( );
+for (var i = 0; i < allChildren.length; i++) {
+if (allChildren[i].nodeType == 1) {
+slideElems[slideElems.length] = allChildren[i];
+}
+}
+allSlides = slideElems;
+}
+// Set pixel heights of slide elements to fit window
+function setHeights( ) {
+for (var i = 0; i < allSlides.length; i++) {
+allSlides[i].style.height = getInsideWindowHeight( ) - 200 + "px";
+}
+}
+// Advance to next slide
+function next( ) {
+if (currSlide < 0) {
+allSlides[++currSlide].style.display = "block";
+} else if (currSlide < allSlides.length - 1) {
+allSlides[currSlide].style.display = "none";
+allSlides[++currSlide].style.display = "block";
+} else if (currSlide == allSlides.length - 1) {
+allSlides[currSlide++].style.display = "none";
+}
+}
+// Go to previous slide
+function prev( ) {
+if (currSlide > allSlides.length - 1) {
+allSlides[--currSlide].style.display = "block";
+} else if (currSlide > 0) {
+allSlides[currSlide].style.display = "none";
+allSlides[--currSlide].style.display = "block";
+} else if (currSlide == 0) {
+allSlides[currSlide--].style.display = "none";
+}
+}
+// Initialize slide show
+function initSlides( ) {
+getAllSlides( );
+setHeights( );
+}
+</script>
+</head>
+<body onload="initDHTMLAPI(); initSlides()" onresize="setHeights( )">
+<h1>U.S. Bill of Rights</h1>
+<hr id="titleBar" />
+<div id="controller">
+<form>
+<input type="button" value="Prev" onclick="prev( )" />
+<input type="button" value="Next" onclick="next( )" />
+</form>
+</div>
+<div id="slides">
+<div id="slide1" class="slide">
+<h2>ARTICLE I</h2>
+<hr />
+<p>
+Congress shall make no law respecting an establishment of religion, or prohibiting
+the free exercise thereof; or abridging the freedom of speech, or of the press; or
+the right of the people peaceably to assemble, and to petition the government for
+a redress of grievances.
+</p>
+<ul>
+<li>Note 1</li>
+<li>Note 2</li>
+<li>Note 3</li>
+Example 15-4. A slide show HTML page and scripts (continued)
+www.it-ebooks.info
+15.5 Creating a Slide Show | 519
+While the script code works in IE 5 or later, the CSS specifications in this example
+require IE 5.5 or later on Windows to achieve the consistent look shown in
+Figure 15-1.
+A lot of what a slide show looks like depends upon the CSS rules applied to a series
+of positioned div elements (of the slide class) nested inside one outer-positioned div
+element (with ID slides). Additional style rules control the look of elements within
+slides, such as headings, bullet lists, and horizontal rule dividers.
+The HTML for the slide title area, controller buttons, and content has a straightforward
+structure. Controller buttons simply activate the prev( ) and next( ) functions
+</ul>
+</div>
+...
+</div>
+</body>
+</html>

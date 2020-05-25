@@ -1,0 +1,22 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<script language = "JavaScript">
+var ten, namsinh; // Khai báo 2 biến để lưu tên và namsinh
+ten = prompt("Tên:", "");
+namsinh = prompt("Năm sinh:", 1990);
+var d= new Date(); 
+namht = d.getFullYear(); 
+var tuoi= namht - namsinh;//parseInt(namsinh); // parseInt: chuyen nam sinh thanh so
+
+document.write("Chào bạn : <B> " + ten + "</B>");
+document.write("<BR>"); // Xuống dòng
+document.write("Tuổi của bạn là : <b> " + tuoi + "</b");
+</script>
+</body>
+</html>

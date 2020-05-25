@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" charset="utf-8">
+<script>
+function changeColor()
+{
+	var color =document.getElementById("favcolor").value;
+	document.getElementById("p1").innerHTML="Giá trị màu được chọn là: " +color ;
+	var canvas=	document.getElementById("fr").style.backgroundColor= color ;
+}
+</script>
+</head>
+<body>
+
+<canvas width="160px"height="120px" id="fr" style="border:1px solid #000000; background-color:#F00"></canvas><br>
+
+
+  <input type="color" id="favcolor" value="#ff0000">
+  <input type="button" onClick="changeColor()" value="Đổi màu" />
+</form>
+
+<p id ="p1"><b>Lưu ý:</b> <strong>type="color"</strong><br> không hỗ trợ trong Internet Explorer.</p>
+
+</body>
+</html>

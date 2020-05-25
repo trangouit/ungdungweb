@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Untitled Document</title>
+	<style>
+		caption{font-weight: bold;}
+	</style>
+	<script src="JS/jquery.v3.4.1.js"></script>
+	<!-- hoặc sử dụng jQuery CDN
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    -->
+	<script>
+		$().ready(function(){
+			$("#btTotal").click(function(){
+				var d1 =$("#dayFrom").val();//lấy giá trị trong phần tử id="dayFrom"
+				var d2 =$("#dayTo").val();//lấy giá trị trong phần tử id="dayTo"
+				d1 = new Date(d1);//tạo đối tượng Date từ d1
+				d2 =new Date(d2);//tạo đối tượng Date từ d2
+				//chuyển d1, d2 sang milisecond, lấy d2 - d1 chia cho giá trị một ngày (24 giờ) theo milisecond
+				var songay= (d2.getTime()-d1.getTime())/(3600*24*1000);
+				$("#result").text("Số ngày là: " + songay);
+			})
+		})
+	</script>
+</head>
+<body>
+	<table>
+		<caption>Tính số ngày giữa hai thời điểm</caption>
+		<tr>
+			<td>Từ ngày:</td>
+			<td><input type="date" id="dayFrom"</td>
+		</tr>
+		<tr>
+			<td>Đến ngày:</td>
+			<td><input type="date" id="dayTo"</td>
+		</tr>
+		<tr>
+			<td><button id="btTotal">Tính số ngày</button></td>
+			<td><span id="result"></span></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" charset="utf-8">
+
+</head>
+<body>
+
+<div align="center"><h2>BẢNG CỬU CHƯƠNG</h2></div>
+<script>
+var html = "<table width='100%' border='1px' >";
+var row, col,i, j, s=0;
+for (row=1; row <=2; row++)
+{
+	html += "<tr>";
+	for (col =1; col <=4;col++)
+	{
+		html +="<td style='padding-left:25px'>";		
+		i= s+col+1;
+		for (j=2;j<=9;j++)
+		{
+			html = html + (i + " x " + j + " = " + i*j +"<br>");
+		}
+		html +="</td>";
+	}
+	s=s+4;
+	html +="</tr>";
+}
+
+html +="</table>";
+document.write(html);
+</script>
+
+</body>
+</html>

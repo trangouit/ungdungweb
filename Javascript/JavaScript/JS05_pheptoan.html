@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Phép toán số học</title>
+<script>
+function tinhtoan()
+{
+	var so1 = parseInt(document.forms.myform["txtSo1"].value);
+	var so2 = parseInt(document.forms.myform["txtSo2"].value);
+	var op =document.forms.myform["op"].value;
+	var kq=0;
+	switch (op)
+	{
+		case "+": kq = so1 + so2; break;
+		case "-": kq = so1 - so2; break;
+		case "*": kq = so1 * so2; break;
+		case "/": 
+			if(so2!=0)
+			{
+				var x = so1/so2;
+				kq =x.toFixed(2); 
+			}
+			else
+				kq = "Không thể thực hiện phép chia cho 0";
+			break;
+	}
+	document.forms.myform["kq"].value=kq;
+	return false;
+}
+
+</script>
+</head>
+
+<body> 
+<form id="myform" onSubmit="return tinhtoan()">
+<table width="50%" border="1">
+  <tr>
+    <th colspan="2" ><h2>CÁC PHÉP TÍNH SỐ HỌC</h2></th>
+  </tr>
+  <tr>
+    <td width="30%">Số thứ 1</td>
+    <td><input type="text" name="txtSo1"  value="5"></td>
+  </tr>
+  <tr>
+    <td>Số thứ 2</td>
+    <td><input type="text" name="txtSo2"  value="4"></td>
+  </tr>
+  <tr>
+    <td>Chọn phép toán</td>
+    <td>
+		<p>
+			<input type="radio" name="op" value="+"  > Cộng <br>
+			<input type="radio" name="op" value="-" > Trừ <br>
+			<input type="radio" name="op" value="*" > Nhân <br>
+			<input type="radio" name="op" value="/"  checked> Chia <br>
+		</p>
+	</td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="btCong"  value="Thực hiện" ></td>
+    <td><input type="text" name="kq" readonly /></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

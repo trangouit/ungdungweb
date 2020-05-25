@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script>
+	$(document).ready(function(){
+		h=$(this).innerHeight();
+		w=$(this).innerWidth();
+		$("#start").click(function(){
+       // $("div").animate({height: 275}, 4000);
+        $("div").animate({height: h,width: w}, 4000);
+    });
+    $("#finish").click(function(){
+        $("div").finish();
+    });	
+ 	});
+	</script>
+</head>
+<body>
+ <p>
+<button id="start">Start Animation</button>
+<button id="finish">Finish Animation</button>
+</p>
+
+<div style="background:#8942D5;height:100px;width:100px"></div>
+</body>
+</html>
